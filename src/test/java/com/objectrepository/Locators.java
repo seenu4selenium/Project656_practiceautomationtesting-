@@ -22,7 +22,13 @@ public class Locators {
 	public final By automationpage_Registration = By.name("register");
 	public final By automationpage_Email = By.name("email");
 	public final By automationpage_Password = By.id("reg_password");
+	public final By automationpage_Homepage = By.xpath("//a[text()='Shop']");
+	public final By automationpage_products = By.xpath("//*[text()='Product Categories']");
+	public final By automationpage_SelectProduct = By.xpath("//a[text()='Android']");
+	public final By automationpage_dropdown = By.xpath("//g[@class='down']");
+	public final By filterLocator = By.xpath("//filter[@id='dropShadowTop']");
 
-	public final By Gmail_Created = By.xpath("//span[text()='Create account']");
-	public final By Gmail_typeofusage = By.xpath("//span[text()='For my personal use']");
-}
+	public final By automationpage_Addtocart = By.xpath("//a[text()='Add to basket']");
+	
+
+	}

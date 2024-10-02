@@ -48,7 +48,9 @@ public class CommonFunctions {
 	}
 
 	public void getURL(String URL) throws IOException {
-		fi = new FileInputStream(projectDir + "\\src\\test\\resources\\testdata\\" + propertyFile);
+		fi = new FileInputStream(projectDir+"//src//test//resources//testdata//" + propertyFile);
+		
+
 		p.load(fi);
 		driver.get(p.getProperty(URL));
 	}
