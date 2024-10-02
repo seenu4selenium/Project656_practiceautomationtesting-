@@ -25,4 +25,8 @@ public class Locators {
 
 	public final By Gmail_Created = By.xpath("//span[text()='Create account']");
 	public final By Gmail_typeofusage = By.xpath("//span[text()='For my personal use']");
+	
+	public final By pat_shop_AddBasket = By.xpath("//*[text()='Add to basket']");
+
+	
 }

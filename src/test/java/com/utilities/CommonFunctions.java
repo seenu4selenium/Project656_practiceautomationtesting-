@@ -51,7 +51,38 @@ public class CommonFunctions {
 		fi = new FileInputStream(projectDir + "\\src\\test\\resources\\testdata\\" + propertyFile);
 		p.load(fi);
 		driver.get(p.getProperty(URL));
+		implicitWait(15);
 	}
+	/*******
+	 * SendKeys
+	 * 
+	 * @throws Exception
+	 ************************/
+	public void sendKeysByAnyLocator(By locator, String inputdata) throws Exception {
+		fi = new FileInputStream(".\\src\\test\\resources\\testdata\\" + propertyFile);
+		p.load(fi);
+
+		WebElement element = driver.findElement(locator);
+
+		// Check your locator is displayed?
+		if (driver.findElements(locator).size() > 0) {
+			// Check your element is in enable state?
+			if (element.isEnabled()) {
+				System.out.println("Given locator is enable state ***");
+				// Clear any existing data has present
+				highlightElement(element);
+				element.clear();
+				// Send the test data to Edit box
+				highlightElement(element);
+				element.sendKeys(p.getProperty(inputdata));
+			} else {
+				System.out.println("Given locator is not enable state on DOM(Current page***");
+			}
+		} else {
+			System.out.println("Given locator is not displayed on DOM(Current page***");
+		}
+	}
+	
 
 	/*******
 	 * Click
@@ -75,6 +106,13 @@ public class CommonFunctions {
 			System.out.println("Given locator is not displayed on DOM(Current page***");
 		}
 	}
+	public void clickUsingJavaScript(By locator) throws Exception {
+		WebElement element = driver.findElement(locator);
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		highlightElement(element);
+		executor.executeScript("arguments[0].click();", element);
+	}
+	
 
 	/************ waits in selenium ***********************/
 
@@ -128,5 +166,13 @@ public class CommonFunctions {
 		} catch (Exception e) {
 			System.out.println("Exception - " + e.getMessage());
 		}
+	}
+
+	// Scrolling down the page till the element is found / visible
+	public void scrollIntoView(By locator) {
+		WebElement element = driver.findElement(locator);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", element);
+		System.out.println("Page scroll done");
 	}
 }
