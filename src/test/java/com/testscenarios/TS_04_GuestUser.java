@@ -59,4 +59,14 @@ public class TS_04_GuestUser extends CommonFunctions {
 		clickByAnyLocator(loc.automationpage_Apply);
 	}
 	
+	@Test
+	public void TS04_6() throws Exception {
+		
+		clickByAnyLocator(loc.automationpage_Ordersubmission);
+		
+		
+		
+		
+	}
+	
 }
