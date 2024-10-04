@@ -48,7 +48,7 @@ public class CommonFunctions {
 	}
 
 	public void getURL(String URL) throws IOException {
-		fi = new FileInputStream(projectDir + "\\src\\test\\resources\\testdata\\" + propertyFile);
+		fi = new FileInputStream(projectDir + "//src//test//resources//testdata//" + propertyFile);
 		p.load(fi);
 		driver.get(p.getProperty(URL));
 		implicitWait(15);
@@ -59,7 +59,10 @@ public class CommonFunctions {
 	 * @throws Exception
 	 ************************/
 	public void sendKeysByAnyLocator(By locator, String inputdata) throws Exception {
+
 		fi = new FileInputStream(".\\src\\test\\resources\\testdata\\" + propertyFile);
+
+		fi = new FileInputStream(projectDir + "//src//test//resources//testdata//" + propertyFile);
 		p.load(fi);
 
 		WebElement element = driver.findElement(locator);
@@ -175,4 +178,6 @@ public class CommonFunctions {
 		js.executeScript("arguments[0].scrollIntoView();", element);
 		System.out.println("Page scroll done");
 	}
+
 }
+
