@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.testscenarios.TS_04_GuestUser">
+      <class name="com.testscenarios.TS_02_LoginAndLogout">
         <methods>
-          <include name="TS04_4"/>
+          <include name="f"/>
         </methods>
-      </class> <!-- com.testscenarios.TS_04_GuestUser -->
+      </class> <!-- com.testscenarios.TS_02_LoginAndLogout -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,17 +1,24 @@
 package com.utilities;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.io.FileHandler;
 
 import com.objectrepository.Locators;
 
@@ -178,6 +185,21 @@ public class CommonFunctions {
 		js.executeScript("arguments[0].scrollIntoView();", element);
 		System.out.println("Page scroll done");
 	}
+	
+	/***********take screenshot of the current page 
+	 * @throws IOException ************/
+	public void takescreenshotOfCurrentPage(String TestCaseName) throws IOException {
+		// Take screenshot after logout
+		Date mytime = new Date();
+		DateFormat df = new SimpleDateFormat("MMMddyyyy_HHmmss");
+		String timeStamp = df.format(mytime);
+		
+		File abc = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		// C:\Users\nalla\git\Project656_practiceautomationtestingNew\screenshots
+		FileHandler.copy(abc, new File(projectDir+"/screenshots/"+TestCaseName+timeStamp+".png"));
+
+	}
+	
 
 }
 
