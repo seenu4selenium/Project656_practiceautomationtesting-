@@ -67,7 +67,7 @@ public class CommonFunctions {
 	 ************************/
 	public void sendKeysByAnyLocator(By locator, String inputdata) throws Exception {
 
-		fi = new FileInputStream(".\\src\\test\\resources\\testdata\\" + propertyFile);
+		//fi = new FileInputStream(".\\src\\test\\resources\\testdata\\" + propertyFile);
 
 		fi = new FileInputStream(projectDir + "//src//test//resources//testdata//" + propertyFile);
 		p.load(fi);
