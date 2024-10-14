@@ -40,7 +40,10 @@ public class CommonFunctions {
 		driver.navigate().refresh();
 		driver.manage().window().maximize();
 		System.out.println("windows maximized");
+		
 	}
+	
+	
 
 	public void firefoxBrowserLaunch() {
 		driver = new FirefoxDriver();

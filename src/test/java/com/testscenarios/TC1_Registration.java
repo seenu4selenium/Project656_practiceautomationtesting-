@@ -1,6 +1,7 @@
 package com.testscenarios;
 
 import java.io.IOException;
+import java.time.Duration;
 
 import org.testng.annotations.Test;
 
@@ -29,6 +30,8 @@ public class TC1_Registration extends CommonFunctions {
 		driver.findElement(loc.automationpage_Email).sendKeys(p.getProperty("automationpage_ValidEmail"));
 		driver.findElement(loc.automationpage_Password).sendKeys(p.getProperty("automationpage_Password"));
 		driver.navigate().refresh();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
 		//driver.findElement(loc.automationpage_Registration).click();
 		driver.findElement(loc.automationpage_Logout).click();
 
