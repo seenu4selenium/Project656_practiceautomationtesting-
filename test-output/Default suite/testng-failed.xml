@@ -5,6 +5,7 @@
     <classes>
       <class name="com.testscenarios.TS_04_GuestUser">
         <methods>
+          <include name="TS04_5"/>
           <include name="TS04_4"/>
         </methods>
       </class> <!-- com.testscenarios.TS_04_GuestUser -->

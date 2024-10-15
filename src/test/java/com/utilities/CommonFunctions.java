@@ -48,7 +48,8 @@ public class CommonFunctions {
 	}
 
 	public void getURL(String URL) throws IOException {
-		fi = new FileInputStream(projectDir + "//src//test//resources//testdata//" + propertyFile);
+		fi = new FileInputStream(projectDir + "/src/test/resources/testdata/" + propertyFile);
+	//	fi = new FileInputStream(projectDir + "//src//test//resources//testdata//" + propertyFile);
 		p.load(fi);
 		driver.get(p.getProperty(URL));
 		implicitWait(15);
@@ -60,9 +61,10 @@ public class CommonFunctions {
 	 ************************/
 	public void sendKeysByAnyLocator(By locator, String inputdata) throws Exception {
 
-		fi = new FileInputStream(".\\src\\test\\resources\\testdata\\" + propertyFile);
+	//	fi = new FileInputStream(".\\src\\test\\resources\\testdata\\" + propertyFile);
 
-		fi = new FileInputStream(projectDir + "//src//test//resources//testdata//" + propertyFile);
+	//	fi = new FileInputStream(projectDir + "//src//test//resources//testdata//" + propertyFile);
+		fi = new FileInputStream(projectDir + "/src/test/resources/testdata/" + propertyFile);
 		p.load(fi);
 
 		WebElement element = driver.findElement(locator);
@@ -148,7 +150,8 @@ public class CommonFunctions {
 		implicitWait(5);
 		highlightElement(ele);
 		String eleText = ele.getText();
-		fi = new FileInputStream(".\\src\\test\\resources\\testdata\\" + propertyFile);
+	//	fi = new FileInputStream(".\\src\\test\\resources\\testdata\\" + propertyFile);
+		fi = new FileInputStream(projectDir + "/src/test/resources/testdata/" + propertyFile);
 		p.load(fi);
 		if (eleText.equals(p.getProperty(expectedresults))) {
 			System.out.println("expected text presented on screen");
